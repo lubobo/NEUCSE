@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Students;
 
 use App\Students;
+use App\Teacher;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
@@ -16,8 +17,10 @@ class StudentsController extends Controller
             // 认证通过...
             session(['login'=>'success']);
             return redirect('/');
-        }else{
-
+        }else if(!empty(Teacher::where(['number'=>$request['number'],'password'=>md5($request['password'])])->first())){
+            session(['login'=>'success']);
+            return redirect('/');
+        } else {
             return back()->withInput()->withError('帐号密码输入不正确');
         }
     }
@@ -30,7 +33,7 @@ class StudentsController extends Controller
     public function login_process(Request $request){
         $student=Students::where('name',$request['name'])->first();
         if($student!=null){
-            echo "fuck";
+
         }
     }
 }

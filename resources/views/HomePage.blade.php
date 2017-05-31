@@ -110,7 +110,7 @@
                                             {{ csrf_field() }}
                                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                                                <label for="role" class="col-md-4 control-label">登陆权限</label>
+                                                <!--<label for="role" class="col-md-4 control-label">登陆权限</label>
                                                 <div class="col-md-6" style="margin-bottom: 3%">
 
                                                     <select class="form-control" id="role" name="role">
@@ -122,10 +122,10 @@
                                                         </option>
                                                     </select>
 
-                                                </div>
+                                                </div>-->
 
 
-                                                <label for="number" class="col-md-4 control-label">学号</label>
+                                                <label for="number" class="col-md-4 control-label">账号</label>
 
                                                 <div class="col-md-6">
                                                     <input id="number" onmouseout="checkMail(this.value)" type="number" class="form-control" name="number" value="{{ old('number') }}" required autofocus>

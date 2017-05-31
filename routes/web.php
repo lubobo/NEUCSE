@@ -39,6 +39,16 @@ Route::get('/checkMail/{mail}','HomeController@checkMail')->name('checkMail');
 
 Route::get('/checkNumber/{number}','HomeController@checkNumber')->name('checkNumber');
 
+Route::get('admin_login','Admin\AdminController@admin_login')->name('admin_login');
+
+Route::get('/AdminHome', 'Admin\AdminController@getHome')->name('adminHome');
+
+Route::get('/admin_out','Admin\AdminController@admin_out')->name('admin_logout');
+
+Route::post('/addNews','Admin\AdminController@addNews')->name('addNews');
+
+Route::post('/checkNews','Admin\AdminController@checkNews')->name('checkNews');
+
 /*Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -49,4 +59,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');*/
